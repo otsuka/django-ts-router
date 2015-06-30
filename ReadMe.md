@@ -1,6 +1,8 @@
 django-ts-router
 =====================
 
+[![PyPI version](https://badge.fury.io/py/django-ts-router.svg)](http://badge.fury.io/py/django-ts-router)
+
 ## 概要
 
 Django の URLconf モジュール(urls.py)に定義した URL パスを名前から逆引きできる TypeScript コードを生成します。
