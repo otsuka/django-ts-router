@@ -3,13 +3,14 @@
 from setuptools import setup, find_packages
 
 setup(name='django-ts-router',
-      version='0.7',
+      version='0.7.1',
+      description='Generates a TypeScript (or JavaScript) source that includes URL reverse functions for your Django app.',
       url='https://github.com/strippers/django-ts-router',
       license='LGPL',
       author='Tomohiro Otsuka',
       author_email='t.otsuka@gmail.com',
       packages=find_packages(
-          exclude=['*tests']
+          exclude=['*tests*', 'testproj']
       ),
       package_data={
           '': ['templates/**/*']
@@ -25,4 +26,5 @@ setup(name='django-ts-router',
           'Programming Language :: Python :: 3.4',
           'Topic :: Internet :: WWW/HTTP',
       ],
+      keywords=['django', 'javascript', 'typescript', 'routing', 'url'],
       )
