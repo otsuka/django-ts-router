@@ -13,7 +13,7 @@ urlpatterns = [
 ```
 
 URLconf モジュールに上記の URL パターンが定義されていた場合に、django-ts-router が生成した TypeScript コードを使うと
-index ビューと detail ビューを示す URL を次のように取得できます。([[生成されたコードの例|Example of Generated Code]])<br>
+index ビューと detail ビューを示す URL を次のように取得できます。([生成されたコードの例](https://github.com/strippers/django-ts-router/wiki/Example-of-Generated-Code))<br>
 このように Django の [reverse()](https://docs.djangoproject.com/en/1.8/ref/urlresolvers/#reverse) 関数と似た機能を TypeScript で提供します。
 
 ```ts
