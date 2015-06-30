@@ -61,7 +61,7 @@ class RoutePattern(object):
         )
 
     def _get_constant(self):
-        return self._name.upper().replace(':', '_')
+        return self._name.upper().replace(':', '_').replace('-', '_')
 
     def generate_function(self):
         """
@@ -86,7 +86,7 @@ class RoutePattern(object):
 
         :type: str
         """
-        name = self._name.replace(':', '_')
+        name = self._name.replace(':', '_').replace('-', '_')
         components = name.split('_')
         return 'get%sURL' % ''.join(x.title() for x in components)
 
@@ -130,7 +130,9 @@ class Router(object):
             route_patterns = {}
 
         for urlpattern in urlpatterns:
+            logger.debug(urlpattern)
             if hasattr(urlpattern, 'url_patterns'):
+                logger.debug('hey')
                 route_patterns = cls.parse_urlpatterns(urlpattern.url_patterns,
                                                        pattern_prefix=(pattern_prefix + urlpattern.regex.pattern),
                                                        namespace=(urlpattern.namespace or namespace),
