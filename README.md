@@ -63,11 +63,11 @@ tsc([TypeScript Compiler](http://www.typescriptlang.org/)) がインストール
 settings.py に `TS_ROUTER` 設定を追加します。
 
     TS_ROUTER = {
-        'NAMES' = [
+        'NAMES': [
             'index',
             'detail',
         ],
-        'MODULE' = 'com.example.router',
+        'MODULE': 'com.example.router',
         'TSC': '/usr/local/bin/tsc',
     }
 
