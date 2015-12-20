@@ -26,7 +26,7 @@ module {{ module }} {
                 throw new Error('An argument "' + definedArgName + '" must be given.')
             }
 
-            pattern = pattern.replace(new RegExp("<" + definedArgName + ">"), String(argVal));
+            pattern = pattern.replace(new RegExp("<" + definedArgName + ">"), encodeURIComponent(String(argVal)));
         });
 
         return pattern
