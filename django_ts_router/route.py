@@ -64,11 +64,12 @@ class RoutePattern(object):
         return self._name.upper().replace(':', '_').replace('-', '_')
 
     def generate_function(self):
-        """
+        """Returnes a string of a function "getXxxxURL()" in which
+        reverse() function invokes.
 
         :rtype: str
         """
-        function_name = self.get_function_name()
+        function_name = self._get_function_name()
         arguments_with_type = [arg + ':string' for arg in self.pattern_args]
         arguments = ', '.join(arguments_with_type)
 
@@ -78,7 +79,7 @@ class RoutePattern(object):
         body += 'return reverse(%s, args);' % self._get_constant()
         return 'export function %s(%s):string {\n%s\n}' % (function_name, arguments, body)
 
-    def get_function_name(self):
+    def _get_function_name(self):
         """Generates a function name 'getXxxxURL'.
 
         Converts snake case (snake_case) to lower camel case (lowerCamelCase).
